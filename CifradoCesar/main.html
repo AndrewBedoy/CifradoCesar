@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cifrado y Descifrado César</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Cifrado y Descifrado César</h1>
+      <label for="text">Texto:</label><br />
+      <textarea id="text" rows="4" cols="50"></textarea><br />
+      <label for="shift">Desplazamiento:</label><br />
+      <input type="number" id="shift" value="3" /><br /><br />
+      <button onclick="encrypt()">Cifrar</button>
+      <button onclick="decrypt()">Descifrar</button><br /><br />
+      <label for="result">Resultado:</label><br />
+      <textarea id="result" rows="4" cols="50" readonly></textarea>
+    </div>
+    <script src="cesar.js"></script>
+  </body>
+</html>
