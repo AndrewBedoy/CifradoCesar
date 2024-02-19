@@ -33,7 +33,7 @@ function encrypt() {
             result += text.charAt(i); //6   
         }
     }
-    document.getElementById("result").value.toLowerCase() = result;
+    document.getElementById("result").value = result.toLowerCase();
 }
 
 function decrypt() {
@@ -70,6 +70,6 @@ function decrypt() {
             result += text.charAt(i); //12    
         }
     }
-    document.getElementById("result").value.toLowerCase()= result;
+    document.getElementById("result").value= result.toLowerCase();
 }
 
