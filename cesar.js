@@ -1,6 +1,6 @@
 
 function encrypt() {
-    var text = document.getElementById("text").value.toUpperCase();
+    var text = document.getElementById("text");//.value.toUpperCase();
     var shift = parseInt(document.getElementById("shift").value);
     var result = "";
     //1
@@ -37,7 +37,7 @@ function encrypt() {
 }
 
 function decrypt() {
-    var text = document.getElementById("text").value.toUpperCase();
+    var text = document.getElementById("text");//.value.toUpperCase();
     var shift = parseInt(document.getElementById("shift").value);
     var result = "";
     
