@@ -1,4 +1,4 @@
-
+/*
 function encrypt() {
     var text = document.getElementById("text").value.toUpperCase();
     var shift = parseInt(document.getElementById("shift").value);
@@ -71,5 +71,58 @@ function decrypt() {
         }
     }
     document.getElementById("result").value= result;
+}*/
+
+function encrypt() {
+    var text = document.getElementById("text").value;
+    var shift = parseInt(document.getElementById("shift").value);
+    var result = "";
+    
+    if (shift < 0 || shift > 78 || isNaN(shift)) {
+        document.getElementById("result").value = "Error: Por favor, ingrese un valor de módulo válido (entre 0 y 78).";
+        return;
+    }
+    
+    var alphabet = "!#$%&()*+,-./:;<>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}éÉáíóúñÑ¿ÁÍÓÚ0123456789";
+    
+    for (var i = 0; i < text.length; i++) {
+        var char = text.charAt(i);
+        var index = alphabet.indexOf(char);
+        
+        if (index !== -1) {
+            var encryptedIndex = (index + shift) % alphabet.length;
+            result += alphabet.charAt(encryptedIndex);
+        } else {
+            result += char;
+        }
+    }
+    document.getElementById("result").value = result;
 }
+
+function decrypt() {
+    var text = document.getElementById("text").value;
+    var shift = parseInt(document.getElementById("shift").value);
+    var result = "";
+    
+    if (shift < 0 || shift > 78 || isNaN(shift)) {
+        document.getElementById("result").value = "Error: Por favor, ingrese un valor de módulo válido (entre 0 y 78).";
+        return;
+    }
+    
+    var alphabet = "!#$%&()*+,-./:;<>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_abcdefghijklmnopqrstuvwxyz{|}éÉáíóúñÑ¿ÁÍÓÚ0123456789";
+    
+    for (var i = 0; i < text.length; i++) {
+        var char = text.charAt(i);
+        var index = alphabet.indexOf(char);
+        
+        if (index !== -1) {
+            var decryptedIndex = (index - shift + alphabet.length) % alphabet.length;
+            result += alphabet.charAt(decryptedIndex);
+        } else {
+            result += char;
+        }
+    }
+    document.getElementById("result").value= result;
+}
+
 
